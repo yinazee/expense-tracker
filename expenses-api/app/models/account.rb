@@ -1,5 +1,5 @@
 class Account < ApplicationRecord
-  has_may :transations
+  has_many :transations
   validates :name, :balance, presence: true
-  
+
 end
