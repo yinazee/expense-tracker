@@ -4,7 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.integer :account_id
       t.float :amount
       t.string :kind
-      t.date :
+      t.datetime :date
       t.string :description
 
       t.timestamps
