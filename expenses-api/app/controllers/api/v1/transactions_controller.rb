@@ -1,31 +1,32 @@
 class Api::V1::TransactionsController < ApplicationController
 
+  before_action :set_account
+
   def index
-    @transactions = Transaction.all
-    render json: @transactions
+    render json: @account.transactions
   end
 
   def create
-    @transaction = Transaction.new(transaction_params)
-    if @transaction.save
-      render json: @transaction
-    else
-      render json: (error: "Error creating transaction")
-    end
+    @transaction = @account.transaction.new(transaction_params)
   end
 
   def show
-    @transacton = Transaction.find(params[:id])
+    # @transacton = @account.transactions.find_by(id: params[:id])
+    @transaction = Transaction.find(params[:id])
     render json: @transaction
   end
 
-  def destroy
-    @transaction = Transaction.find(params[:id])
-    @transaction.destroy
-  end
+  # def destroy
+  #   @transaction = Transaction.find(params[:id])
+  #   @transaction.destroy
+  # end
 
 
   private
+
+  def set_account
+    @account = Account.find(params[:account_id])
+  end
 
   def transaction_params
     params.require(:transation).permit(:account_id, :amount, :kind, :date, :description)

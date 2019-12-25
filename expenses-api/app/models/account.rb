@@ -1,5 +1,5 @@
 class Account < ApplicationRecord
-  has_many :transations
+  has_many :transactions
   validates :name, :balance, presence: true
 
   def update_balance(transaction)
@@ -11,7 +11,7 @@ class Account < ApplicationRecord
         self.balance = self.balance - transaction.amount
         self.save
       else
-        return 'balance too low'
+        return 'Balance too low.'
       end
     end
   end
