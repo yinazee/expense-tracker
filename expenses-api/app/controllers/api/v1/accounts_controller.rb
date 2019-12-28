@@ -10,7 +10,7 @@ class Api::V1::AccountsController < ApplicationController
     if @account.save
       render json: @accounts
     else
-      render json: (error: "Error creating account")
+      render json: {error: "Error creating account"}
     end
   end
 
