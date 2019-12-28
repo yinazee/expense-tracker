@@ -8,7 +8,7 @@ class App extends React.Component {
 // .then(data => console.log(data))
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/accounts/1', {
+    fetch('http://localhost:3000/api/v1/accounts', {
     method: 'GET'
   })
     .then(response => response.json())
