@@ -1,7 +1,5 @@
 class Api::V1::AccountsController < ApplicationController
 
-  binding.pry
-
   def index
     @accounts = Account.all
     render json: @accounts
