@@ -17,7 +17,7 @@ class AccountInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.addAccount
+    this.props.addAccount(this.state)
   }
 
   render() {
@@ -29,7 +29,7 @@ class AccountInput extends React.Component {
           <br/>
           <label>Checking Account Balance:</label>
           <input type="text" placeholder="Balance" name="balance" onChange={this.handleChange}/>
-          </br>
+          <br/>
           <input type="submit" />
         </form>
       </div>
