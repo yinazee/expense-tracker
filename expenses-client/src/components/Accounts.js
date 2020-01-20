@@ -7,7 +7,7 @@ const Accounts = (props) => {
     return (
       <div>
          {props.accounts.map(account =>
-           <li key={account.id}><Account account={account}/></li> )}
+          <Account account={account}/> )}
 
       </div>
     )
