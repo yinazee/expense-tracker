@@ -6,10 +6,10 @@ class Api::V1::AccountsController < ApplicationController
   end
 
   def create
-    
+
     @account = Account.new(account_params)
     if @account.save
-      render json: @accounts
+      render json: @account
     else
       render json: {error: "Error creating account"}
     end
