@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Route} from 'react-router-dom'
 import {fetchAccounts} from '../actions/fetchAccounts'
 import AccountInput from '../components/AccountInput'
 import Accounts from '../components/Accounts'
@@ -13,8 +14,10 @@ class AccountsContainer extends React.Component {
   render() {
     return (
       <div>
-        <AccountInput />
-        <Accounts accounts={this.props.accounts}/>
+      <Route path='/accounts/new' component={AccountInput}/>
+      <Route path
+      <Route exact path='/accounts' render={() => <Accounts accounts={this.props.accounts}/>}/>
+
       </div>
     )
   }
