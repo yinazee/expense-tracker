@@ -17,7 +17,7 @@ class AccountsContainer extends React.Component {
       <div>
       <Route path='/accounts/new' component={AccountInput}/>
       <Route path='/accounts/:id' render={(routerProps) => <Account {...routerProps} accounts={this.props.accounts}/>}/>
-      <Route path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>}/> 
+      <Route path='/accounts' render={(routerProps) => <Accounts {...routerProps} accounts={this.props.accounts}/>}/>
 
       </div>
     )
